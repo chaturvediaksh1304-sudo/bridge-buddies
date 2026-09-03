@@ -9,18 +9,15 @@ import SwiftUI
 /// flexible, so the layout keeps its proportions rather than its pixel offsets
 /// as the device changes.
 struct LoginView: View {
-    @State private var email = ""
-    @State private var password = ""
-    @State private var rememberMe = false
+    @State private var model: LoginViewModel
 
     @Environment(\.dismiss) private var dismiss
 
-    var onLogIn: () -> Void = {}
-    var onForgotPassword: () -> Void = {}
     var onSignUp: () -> Void = {}
 
-    private var canSubmit: Bool {
-        !email.trimmingCharacters(in: .whitespaces).isEmpty && !password.isEmpty
+    init(auth: AuthService = .development(), onSignUp: @escaping () -> Void = {}) {
+        _model = State(initialValue: LoginViewModel(auth: auth))
+        self.onSignUp = onSignUp
     }
 
     var body: some View {
@@ -72,20 +69,29 @@ struct LoginView: View {
 
     private var credentials: some View {
         VStack(spacing: Spacing.stack) {
-            InputPill(label: "Email", text: $email, layout: .stacked)
+            InputPill(label: "Email", text: $model.email, layout: .stacked)
                 .keyboardType(.emailAddress)
                 .textInputAutocapitalization(.never)
                 .textContentType(.username)
 
-            InputPill(label: "Password", text: $password, layout: .stacked, isSecure: true)
+            InputPill(label: "Password", text: $model.password, layout: .stacked, isSecure: true)
                 .textContentType(.password)
 
+            if let errorMessage = model.errorMessage {
+                Text(errorMessage)
+                    .font(.bodySM)
+                    .foregroundColor(.statusBusy)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 8)
+                    .transition(.opacity)
+            }
+
             HStack(spacing: Spacing.stack) {
-                CheckboxToggle(isOn: $rememberMe, label: "Remember Me")
+                CheckboxToggle(isOn: $model.rememberMe, label: "Remember Me")
 
                 Spacer(minLength: 0)
 
-                Button(action: onForgotPassword) {
+                Button { Task { await model.sendPasswordReset() } } label: {
                     Text("Forgot Password?")
                         .font(.bodyMD)
                         .foregroundColor(.textSecondary)
@@ -94,19 +100,21 @@ struct LoginView: View {
             }
             .padding(.top, 4)
         }
+        .animation(.spring(response: 0.35, dampingFraction: 1.0), value: model.errorMessage)
     }
 
     private var commit: some View {
         VStack(spacing: Spacing.stack) {
             PrimaryButton(
-                title: "Log in",
+                title: model.isSubmitting ? "Signing in…" : "Log in",
                 style: .dark,
-                font: .displayFont(size: 26),
-                action: onLogIn
-            )
-            .opacity(canSubmit ? 1 : 0.55)
-            .disabled(!canSubmit)
-            .animation(.spring(response: 0.35, dampingFraction: 1.0), value: canSubmit)
+                font: .displayFont(size: 26)
+            ) {
+                Task { await model.logIn() }
+            }
+            .opacity(model.canSubmit ? 1 : 0.55)
+            .disabled(!model.canSubmit)
+            .animation(.spring(response: 0.35, dampingFraction: 1.0), value: model.canSubmit)
 
             HStack(spacing: 5) {
                 Text("Don't have an account?")

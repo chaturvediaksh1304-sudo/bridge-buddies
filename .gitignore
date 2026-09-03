@@ -12,3 +12,7 @@ xcuserdata/
 # Design source files and wireframes contain personal contact details
 # (see README — held back deliberately, not an oversight)
 Initial/
+
+# SwiftPM
+.build/
+.swiftpm/

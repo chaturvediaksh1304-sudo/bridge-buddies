@@ -8,16 +8,16 @@ import SwiftUI
 /// next screen can render.
 struct SchoolSelectView: View {
     @State private var query = ""
-    @State private var selected: String?
+    @State private var selected: School?
     @Environment(\.dismiss) private var dismiss
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
-    var onContinue: (String) -> Void = { _ in }
+    var onContinue: (School) -> Void = { _ in }
 
-    private var filtered: [String] {
+    private var filtered: [School] {
         let q = query.trimmingCharacters(in: .whitespaces)
-        guard !q.isEmpty else { return Self.schools }
-        return Self.schools.filter { $0.localizedCaseInsensitiveContains(q) }
+        guard !q.isEmpty else { return School.catalog }
+        return School.catalog.filter { $0.name.localizedCaseInsensitiveContains(q) }
     }
 
     var body: some View {
@@ -48,8 +48,8 @@ struct SchoolSelectView: View {
                             .foregroundColor(.textSecondary)
                             .padding(.vertical, 7)
                     } else {
-                        ForEach(filtered, id: \.self) { school in
-                            PlainListRow(title: school, isSelected: selected == school) {
+                        ForEach(filtered) { school in
+                            PlainListRow(title: school.name, isSelected: selected == school) {
                                 selected = school
                             }
                         }
@@ -76,32 +76,6 @@ struct SchoolSelectView: View {
         .navigationBarBackButtonHidden(true)
     }
 
-    private static let schools = [
-        "Arizona State University",
-        "Boston University",
-        "Brown University",
-        "Carnegie Mellon University",
-        "Central Michigan University",
-        "Columbia University",
-        "Cornell University",
-        "Dartmouth College",
-        "Duke University",
-        "Georgia Institute of Technology",
-        "Harvard University",
-        "Johns Hopkins University",
-        "Massachusetts Institute of Technology",
-        "Michigan State University",
-        "New York University",
-        "Northeastern University",
-        "Ohio State University",
-        "Pennsylvania State University",
-        "Princeton University",
-        "Purdue University",
-        "Rice University",
-        "Rutgers University",
-        "Stanford University",
-        "University of Michigan"
-    ]
 }
 
 #Preview {
