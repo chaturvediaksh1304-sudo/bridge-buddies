@@ -1,5 +1,5 @@
 import Testing
-@testable import BridgeBuddiesCore
+@testable import BridgeBuddies
 
 /// The rules come from Profile Setup's own helper text (wireframe 2.3):
 /// at least 8 characters, one uppercase, one lowercase, one number, one special.

@@ -1,5 +1,5 @@
 import Testing
-@testable import BridgeBuddiesCore
+@testable import BridgeBuddies
 
 /// Records what it was asked to do and returns whatever the test sets up, so
 /// every AuthService rule can be checked without a network or a Firebase project.

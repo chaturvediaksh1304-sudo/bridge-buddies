@@ -1,5 +1,5 @@
 import Testing
-@testable import BridgeBuddiesCore
+@testable import BridgeBuddies
 
 @Suite("Sign in with Apple nonce")
 struct SignInWithAppleNonceTests {

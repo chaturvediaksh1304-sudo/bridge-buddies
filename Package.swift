@@ -7,20 +7,20 @@ import PackageDescription
 // Services and Screens all compile into it as one module — which is why the
 // core API is internal and the tests use @testable.
 let package = Package(
-    name: "BridgeBuddiesCore",
+    name: "BridgeBuddies",
     platforms: [.iOS(.v17), .macOS(.v14)],
     products: [
-        .library(name: "BridgeBuddiesCore", targets: ["BridgeBuddiesCore"])
+        .library(name: "BridgeBuddies", targets: ["BridgeBuddies"])
     ],
     targets: [
         .target(
-            name: "BridgeBuddiesCore",
+            name: "BridgeBuddies",
             path: "BridgeBuddies/BridgeBuddies",
             sources: ["Models", "Services"]
         ),
         .testTarget(
-            name: "BridgeBuddiesCoreTests",
-            dependencies: ["BridgeBuddiesCore"],
+            name: "BridgeBuddiesTests",
+            dependencies: ["BridgeBuddies"],
             path: "BridgeBuddies/Tests/CoreTests"
         )
     ]

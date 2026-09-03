@@ -1,5 +1,5 @@
 import Testing
-@testable import BridgeBuddiesCore
+@testable import BridgeBuddies
 
 @Suite("Email domain validation")
 struct EmailDomainValidatorTests {
