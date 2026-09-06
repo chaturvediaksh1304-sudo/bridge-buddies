@@ -22,7 +22,7 @@ struct RootView: View {
             case .signedOut:
                 NavigationStack { SplashView(session: session) }
             case .signedIn:
-                HomeView()
+                MainTabView(session: session)
             }
         }
         .task { await session.start() }

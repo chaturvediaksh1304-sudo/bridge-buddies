@@ -11,7 +11,6 @@ struct ChatListView: View {
 
     @State private var myStatus: PresenceStatus = .available
     @State private var searchText = ""
-    @State private var selectedTab: AppTab = .chat
     @State private var openedConversation: String?
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -57,8 +56,6 @@ struct ChatListView: View {
                     .scrollDismissesKeyboard(.interactively)
                 }
                 .ignoresSafeArea(edges: .top)
-
-                BottomTabBar(selected: $selectedTab)
             }
             .navigationBarHidden(true)
             .navigationDestination(item: $openedConversation) { name in

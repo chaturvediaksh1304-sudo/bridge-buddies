@@ -39,6 +39,7 @@ struct BottomTabBar: View {
             }
         }
         .padding(.vertical, 14)
+        .animation(.spring(response: 0.32, dampingFraction: 0.78), value: selected)
         .background(.regularMaterial, in: Capsule())
         .cardShadow()
         .padding(.horizontal, Spacing.screenH)

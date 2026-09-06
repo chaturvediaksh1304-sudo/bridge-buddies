@@ -79,7 +79,8 @@ struct LegalLinksRow: View {
                         .font(font)
                         .foregroundColor(tint)
                         .lineLimit(1)
-                        .minimumScaleFactor(0.8)
+                        .minimumScaleFactor(0.6)
+                        .layoutPriority(1)
                 }
                 .buttonStyle(PressableStyle(scale: 0.95))
             }

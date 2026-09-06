@@ -22,7 +22,6 @@ struct ProfileView: View {
     var onLegalLink: (String) -> Void = { _ in }
     var onSignOut: () -> Void = {}
 
-    @State private var selectedTab: AppTab = .profile
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -46,6 +45,7 @@ struct ProfileView: View {
                         tint: .textPrimary,
                         onTap: onLegalLink
                     )
+                    .padding(.horizontal, Spacing.screenH)
                 }
 
                 Spacer(minLength: Spacing.section)
@@ -55,8 +55,6 @@ struct ProfileView: View {
             }
             .padding(.top, Spacing.stack)
             .padding(.bottom, Spacing.tabBarClearance)
-
-            BottomTabBar(selected: $selectedTab)
         }
     }
 

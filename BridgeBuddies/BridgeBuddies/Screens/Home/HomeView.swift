@@ -74,15 +74,10 @@ struct HomeView: View {
                         }
                         .padding(.horizontal, Spacing.screenH)
 
-                        Spacer(minLength: 100)
+                        Spacer(minLength: Spacing.tabBarClearance)
                     }
                     .padding(.top, 20)
                 }
-            }
-
-            VStack {
-                Spacer()
-                BottomTabBar(selected: .constant(.home))
             }
         }
     }

@@ -35,7 +35,6 @@ struct IdentityBubblesView: View {
         "Good listener"
     ]
     @State private var draft = ""
-    @State private var tab: AppTab = .home
 
     @Namespace private var bubbles
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -78,11 +77,6 @@ struct IdentityBubblesView: View {
             .padding(.horizontal, Spacing.screenH)
             .offset(y: headerHeight - 26)
             .onSubmit(commitDraft)
-
-            VStack {
-                Spacer()
-                BottomTabBar(selected: $tab)
-            }
         }
     }
 

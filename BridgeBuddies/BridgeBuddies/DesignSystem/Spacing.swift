@@ -8,7 +8,7 @@ enum Spacing {
     /// Bottom inset that clears the floating `BottomTabBar` — its pill, the
     /// raised active circle, and the 12pt the bar itself sits off the edge.
     /// Every tab screen uses this so the last row lands in the same place.
-    static let tabBarClearance: CGFloat = 104
+    static let tabBarClearance: CGFloat = 132
 }
 
 enum Radius {

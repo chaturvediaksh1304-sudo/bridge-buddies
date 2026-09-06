@@ -10,7 +10,6 @@ struct CampusResourcesView: View {
     var onSelect: (String) -> Void = { _ in }
 
     @State private var query = ""
-    @State private var tab: AppTab = .explore
 
     private static let resources = [
         "24/7 Resources for Students in Crisis",
@@ -83,8 +82,6 @@ struct CampusResourcesView: View {
                 .padding(.bottom, Spacing.tabBarClearance)
             }
             .padding(.horizontal, Spacing.screenH)
-
-            BottomTabBar(selected: $tab)
         }
     }
 }
