@@ -1,44 +1,27 @@
 import SwiftUI
 
-/// Onboarding step 4 — the long form. Wireframe 2.3.
-///
-/// The background flips from the neutral gradient to the brand maroon here: this
-/// is the first screen where the user is building *their* profile rather than
-/// getting through auth chrome, and the colour shift marks that.
+/// Profile Setup — wireframe 2.3.
 ///
 /// The twelve fields are not one list. They are five short sections — identity,
 /// contact, credentials, personal, context — and the spacing says so: fields
 /// inside a section sit `fieldGap` apart, sections `groupGap`. Helper text stays
-/// owned by its field (the pill components draw it at 6pt), so it never floats
-/// between two groups.
+/// owned by its field, so a rule never floats between two groups.
+///
+/// Submitting creates the auth account. The session deliberately stays signed
+/// out afterwards: the address is unverified, and `signIn` would reject it.
 struct ProfileSetupView: View {
-    @State private var firstName = ""
-    @State private var lastName = ""
-    @State private var userName = ""
-    @State private var schoolEmail = ""
-    @State private var phone = ""
-    @State private var password = ""
-    @State private var confirmPassword = ""
-    @State private var dateOfBirth = ""
-    @State private var bio = ""
-    @State private var location = ""
-    @State private var major = ""
-    @State private var standing = ""
+    @State private var model: ProfileSetupViewModel
 
     @Environment(\.dismiss) private var dismiss
+
+    init(session: AuthSession) {
+        _model = State(initialValue: ProfileSetupViewModel(session: session))
+    }
 
     /// Tight rhythm inside a group.
     private let fieldGap: CGFloat = 12
     /// Breathing room between groups — the whole point of the layout.
     private let groupGap = Spacing.section
-
-    private let bioLimit = 200
-
-    private var canContinue: Bool {
-        ![firstName, lastName, userName, schoolEmail, phone,
-          password, confirmPassword, dateOfBirth, bio]
-            .contains { $0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
-    }
 
     var body: some View {
         ZStack {
@@ -47,50 +30,54 @@ struct ProfileSetupView: View {
             VStack(spacing: 0) {
                 Text("Profile Setup")
                     .font(.displayMD)
+                    .displayTracking(32)
                     .foregroundColor(.textPrimary)
                     .padding(.bottom, groupGap)
 
                 ScrollView {
                     VStack(spacing: groupGap) {
                         group {
-                            InputPill(label: "First Name*", text: $firstName)
-                            InputPill(label: "Last Name*", text: $lastName)
-                            InputPill(label: "User Name*", text: $userName)
+                            InputPill(label: "First Name*", text: $model.draft.firstName)
+                            InputPill(label: "Last Name*", text: $model.draft.lastName)
+                            InputPill(label: "User Name*", text: $model.draft.userName)
                         }
 
                         group {
-                            InputPill(label: "School Email*", text: $schoolEmail)
-                                .keyboardType(.emailAddress)
-                                .textInputAutocapitalization(.never)
-                            InputPill(label: "Phone No.*", text: $phone)
+                            InputPill(
+                                label: "School Email*", text: $model.draft.email,
+                                helperText: model.emailHelper
+                            )
+                            .keyboardType(.emailAddress)
+                            .textInputAutocapitalization(.never)
+                            InputPill(label: "Phone No.*", text: $model.draft.phone)
                                 .keyboardType(.phonePad)
                         }
 
                         InputPillPair(
-                            topLabel: "Password*", topText: $password,
-                            bottomLabel: "Confirm It*", bottomText: $confirmPassword,
-                            helperText: "Be at least 8 characters long; must include one uppercase letter; must include one lowercase letter; must include one number; must include one special character"
+                            topLabel: "Password*", topText: $model.draft.password,
+                            bottomLabel: "Confirm It*", bottomText: $model.draft.confirmPassword,
+                            helperText: model.passwordHelper
                         )
 
                         group {
-                            InputPill(label: "Date of Birth*", text: $dateOfBirth)
+                            InputPill(label: "Date of Birth*", text: $model.draft.dateOfBirth)
                             InputPill(
-                                label: "Bio*", text: $bio, isMultiline: true,
-                                helperText: "A short intro about you — interests, vibes, or what you're looking for\nCharacter limit: Max \(bioLimit) characters"
+                                label: "Bio*", text: $model.draft.bio, isMultiline: true,
+                                helperText: model.bioHelper
                             )
-                            .onChange(of: bio) { _, new in
-                                if new.count > bioLimit { bio = String(new.prefix(bioLimit)) }
-                            }
                         }
 
                         group {
-                            InputPill(label: "Location", text: $location)
-                            InputPill(label: "Major", text: $major)
-                            InputPill(label: "Standing", text: $standing)
+                            InputPill(label: "Location", text: $model.draft.location)
+                            InputPill(label: "Major", text: $model.draft.major)
+                            InputPill(label: "Standing", text: $model.draft.standing)
                         }
+
+                        status
                     }
                     .padding(.horizontal, Spacing.screenH)
                     .padding(.bottom, groupGap)
+                    .animation(.spring(response: 0.35, dampingFraction: 1.0), value: model.didCreateAccount)
                 }
                 .scrollDismissesKeyboard(.interactively)
 
@@ -98,10 +85,26 @@ struct ProfileSetupView: View {
             }
             .padding(.top, Spacing.stack)
         }
+        .navigationBarBackButtonHidden(true)
     }
 
     private func group<Content: View>(@ViewBuilder _ content: () -> Content) -> some View {
         VStack(spacing: fieldGap, content: content)
+    }
+
+    @ViewBuilder
+    private var status: some View {
+        if model.didCreateAccount {
+            Text("Account created. Confirm your email, then log in.")
+                .font(.bodyMD)
+                .foregroundColor(.textPrimary)
+                .frame(maxWidth: .infinity, alignment: .leading)
+        } else if let errorMessage = model.errorMessage {
+            Text(errorMessage)
+                .font(.bodySM)
+                .foregroundColor(.statusBusy)
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
     }
 
     private var footer: some View {
@@ -110,15 +113,16 @@ struct ProfileSetupView: View {
             Spacer(minLength: Spacing.stack)
             LegalLinksRow(links: ["Privacy Policy", "Terms of Use"])
             Spacer(minLength: Spacing.stack)
-            CircularNavButton(direction: .forward, isEnabled: canContinue) {}
-                .animation(.spring(response: 0.35, dampingFraction: 1.0), value: canContinue)
+            CircularNavButton(direction: .forward, isEnabled: model.canSubmit) {
+                Task { await model.submit() }
+            }
+            .animation(.spring(response: 0.35, dampingFraction: 1.0), value: model.canSubmit)
         }
         .padding(.horizontal, Spacing.screenH)
-        .padding(.top, Spacing.stack)
-        .padding(.bottom, Spacing.stack)
+        .padding(.vertical, Spacing.stack)
     }
 }
 
 #Preview {
-    ProfileSetupView()
+    NavigationStack { ProfileSetupView(session: AuthSession(auth: .development())) }
 }

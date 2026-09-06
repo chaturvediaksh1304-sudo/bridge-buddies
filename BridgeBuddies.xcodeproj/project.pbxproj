@@ -30,20 +30,20 @@
 		BB000000000000000000002C = {isa = PBXBuildFile; fileRef = BB000000000000000000002B; };
 		BB000000000000000000002F = {isa = PBXBuildFile; fileRef = BB000000000000000000002E; };
 		BB0000000000000000000031 = {isa = PBXBuildFile; fileRef = BB0000000000000000000030; };
-		BB0000000000000000000034 = {isa = PBXBuildFile; fileRef = BB0000000000000000000033; };
-		BB0000000000000000000037 = {isa = PBXBuildFile; fileRef = BB0000000000000000000036; };
+		BB0000000000000000000033 = {isa = PBXBuildFile; fileRef = BB0000000000000000000032; };
+		BB0000000000000000000036 = {isa = PBXBuildFile; fileRef = BB0000000000000000000035; };
 		BB0000000000000000000039 = {isa = PBXBuildFile; fileRef = BB0000000000000000000038; };
-		BB000000000000000000003C = {isa = PBXBuildFile; fileRef = BB000000000000000000003B; };
-		BB000000000000000000003F = {isa = PBXBuildFile; fileRef = BB000000000000000000003E; };
-		BB0000000000000000000042 = {isa = PBXBuildFile; fileRef = BB0000000000000000000041; };
+		BB000000000000000000003B = {isa = PBXBuildFile; fileRef = BB000000000000000000003A; };
+		BB000000000000000000003E = {isa = PBXBuildFile; fileRef = BB000000000000000000003D; };
+		BB0000000000000000000041 = {isa = PBXBuildFile; fileRef = BB0000000000000000000040; };
 		BB0000000000000000000044 = {isa = PBXBuildFile; fileRef = BB0000000000000000000043; };
 		BB0000000000000000000046 = {isa = PBXBuildFile; fileRef = BB0000000000000000000045; };
 		BB0000000000000000000048 = {isa = PBXBuildFile; fileRef = BB0000000000000000000047; };
 		BB000000000000000000004A = {isa = PBXBuildFile; fileRef = BB0000000000000000000049; };
-		BB000000000000000000004D = {isa = PBXBuildFile; fileRef = BB000000000000000000004C; };
-		BB0000000000000000000050 = {isa = PBXBuildFile; fileRef = BB000000000000000000004F; };
-		BB0000000000000000000053 = {isa = PBXBuildFile; fileRef = BB0000000000000000000052; };
-		BB0000000000000000000055 = {isa = PBXBuildFile; fileRef = BB0000000000000000000054; };
+		BB000000000000000000004C = {isa = PBXBuildFile; fileRef = BB000000000000000000004B; };
+		BB000000000000000000004E = {isa = PBXBuildFile; fileRef = BB000000000000000000004D; };
+		BB0000000000000000000051 = {isa = PBXBuildFile; fileRef = BB0000000000000000000050; };
+		BB0000000000000000000054 = {isa = PBXBuildFile; fileRef = BB0000000000000000000053; };
 		BB0000000000000000000057 = {isa = PBXBuildFile; fileRef = BB0000000000000000000056; };
 		BB0000000000000000000059 = {isa = PBXBuildFile; fileRef = BB0000000000000000000058; };
 		BB000000000000000000005B = {isa = PBXBuildFile; fileRef = BB000000000000000000005A; };
@@ -52,15 +52,18 @@
 		BB0000000000000000000061 = {isa = PBXBuildFile; fileRef = BB0000000000000000000060; };
 		BB0000000000000000000063 = {isa = PBXBuildFile; fileRef = BB0000000000000000000062; };
 		BB0000000000000000000065 = {isa = PBXBuildFile; fileRef = BB0000000000000000000064; };
-		BB0000000000000000000068 = {isa = PBXBuildFile; fileRef = BB0000000000000000000067; };
-		BB000000000000000000006A = {isa = PBXBuildFile; fileRef = BB0000000000000000000069; };
+		BB0000000000000000000067 = {isa = PBXBuildFile; fileRef = BB0000000000000000000066; };
+		BB0000000000000000000069 = {isa = PBXBuildFile; fileRef = BB0000000000000000000068; };
 		BB000000000000000000006C = {isa = PBXBuildFile; fileRef = BB000000000000000000006B; };
 		BB000000000000000000006E = {isa = PBXBuildFile; fileRef = BB000000000000000000006D; };
 		BB0000000000000000000070 = {isa = PBXBuildFile; fileRef = BB000000000000000000006F; };
+		BB0000000000000000000072 = {isa = PBXBuildFile; fileRef = BB0000000000000000000071; };
+		BB0000000000000000000074 = {isa = PBXBuildFile; fileRef = BB0000000000000000000073; };
+		BB0000000000000000000076 = {isa = PBXBuildFile; fileRef = BB0000000000000000000075; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BB0000000000000000000088 = {isa = PBXContainerItemProxy; containerPortal = BB000000000000000000008B; proxyType = 1; remoteGlobalIDString = BB0000000000000000000087; remoteInfo = BridgeBuddies; };
+		BB000000000000000000008E = {isa = PBXContainerItemProxy; containerPortal = BB0000000000000000000091; proxyType = 1; remoteGlobalIDString = BB000000000000000000008D; remoteInfo = BridgeBuddies; };
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -86,42 +89,45 @@
 		BB0000000000000000000029 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Spacing.swift"; sourceTree = "<group>"; };
 		BB000000000000000000002B = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Typography.swift"; sourceTree = "<group>"; };
 		BB000000000000000000002E = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthenticatedUser.swift"; sourceTree = "<group>"; };
-		BB0000000000000000000030 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "School.swift"; sourceTree = "<group>"; };
-		BB0000000000000000000033 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootView.swift"; sourceTree = "<group>"; };
-		BB0000000000000000000036 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatListView.swift"; sourceTree = "<group>"; };
-		BB0000000000000000000038 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatThreadView.swift"; sourceTree = "<group>"; };
-		BB000000000000000000003B = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeView.swift"; sourceTree = "<group>"; };
-		BB000000000000000000003E = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IdentityBubblesView.swift"; sourceTree = "<group>"; };
-		BB0000000000000000000041 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView.swift"; sourceTree = "<group>"; };
-		BB0000000000000000000043 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewModel.swift"; sourceTree = "<group>"; };
-		BB0000000000000000000045 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileSetupView.swift"; sourceTree = "<group>"; };
-		BB0000000000000000000047 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchoolSelectView.swift"; sourceTree = "<group>"; };
-		BB0000000000000000000049 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SplashView.swift"; sourceTree = "<group>"; };
-		BB000000000000000000004C = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileView.swift"; sourceTree = "<group>"; };
-		BB000000000000000000004F = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CampusResourcesView.swift"; sourceTree = "<group>"; };
-		BB0000000000000000000052 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthBackend.swift"; sourceTree = "<group>"; };
-		BB0000000000000000000054 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthError.swift"; sourceTree = "<group>"; };
-		BB0000000000000000000056 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthService.swift"; sourceTree = "<group>"; };
-		BB0000000000000000000058 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthServiceFactory.swift"; sourceTree = "<group>"; };
-		BB000000000000000000005A = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthSession.swift"; sourceTree = "<group>"; };
-		BB000000000000000000005C = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmailDomainValidator.swift"; sourceTree = "<group>"; };
-		BB000000000000000000005E = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseAuthBackend.swift"; sourceTree = "<group>"; };
-		BB0000000000000000000060 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InMemoryAuthBackend.swift"; sourceTree = "<group>"; };
-		BB0000000000000000000062 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordPolicy.swift"; sourceTree = "<group>"; };
-		BB0000000000000000000064 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInWithAppleNonce.swift"; sourceTree = "<group>"; };
-		BB0000000000000000000067 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthServiceTests.swift"; sourceTree = "<group>"; };
-		BB0000000000000000000069 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthSessionTests.swift"; sourceTree = "<group>"; };
-		BB000000000000000000006B = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmailDomainValidatorTests.swift"; sourceTree = "<group>"; };
-		BB000000000000000000006D = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordPolicyTests.swift"; sourceTree = "<group>"; };
-		BB000000000000000000006F = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInWithAppleNonceTests.swift"; sourceTree = "<group>"; };
-		BB0000000000000000000072 = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info.plist"; sourceTree = "<group>"; };
-		BB0000000000000000000075 = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BridgeBuddies.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB0000000000000000000076 = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BridgeBuddiesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB0000000000000000000030 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileDraft.swift"; sourceTree = "<group>"; };
+		BB0000000000000000000032 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "School.swift"; sourceTree = "<group>"; };
+		BB0000000000000000000035 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootView.swift"; sourceTree = "<group>"; };
+		BB0000000000000000000038 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatListView.swift"; sourceTree = "<group>"; };
+		BB000000000000000000003A = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatThreadView.swift"; sourceTree = "<group>"; };
+		BB000000000000000000003D = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeView.swift"; sourceTree = "<group>"; };
+		BB0000000000000000000040 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IdentityBubblesView.swift"; sourceTree = "<group>"; };
+		BB0000000000000000000043 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView.swift"; sourceTree = "<group>"; };
+		BB0000000000000000000045 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewModel.swift"; sourceTree = "<group>"; };
+		BB0000000000000000000047 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileSetupView.swift"; sourceTree = "<group>"; };
+		BB0000000000000000000049 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileSetupViewModel.swift"; sourceTree = "<group>"; };
+		BB000000000000000000004B = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchoolSelectView.swift"; sourceTree = "<group>"; };
+		BB000000000000000000004D = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SplashView.swift"; sourceTree = "<group>"; };
+		BB0000000000000000000050 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileView.swift"; sourceTree = "<group>"; };
+		BB0000000000000000000053 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CampusResourcesView.swift"; sourceTree = "<group>"; };
+		BB0000000000000000000056 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthBackend.swift"; sourceTree = "<group>"; };
+		BB0000000000000000000058 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthError.swift"; sourceTree = "<group>"; };
+		BB000000000000000000005A = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthService.swift"; sourceTree = "<group>"; };
+		BB000000000000000000005C = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthServiceFactory.swift"; sourceTree = "<group>"; };
+		BB000000000000000000005E = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthSession.swift"; sourceTree = "<group>"; };
+		BB0000000000000000000060 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmailDomainValidator.swift"; sourceTree = "<group>"; };
+		BB0000000000000000000062 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseAuthBackend.swift"; sourceTree = "<group>"; };
+		BB0000000000000000000064 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InMemoryAuthBackend.swift"; sourceTree = "<group>"; };
+		BB0000000000000000000066 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordPolicy.swift"; sourceTree = "<group>"; };
+		BB0000000000000000000068 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInWithAppleNonce.swift"; sourceTree = "<group>"; };
+		BB000000000000000000006B = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthServiceTests.swift"; sourceTree = "<group>"; };
+		BB000000000000000000006D = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthSessionTests.swift"; sourceTree = "<group>"; };
+		BB000000000000000000006F = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmailDomainValidatorTests.swift"; sourceTree = "<group>"; };
+		BB0000000000000000000071 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordPolicyTests.swift"; sourceTree = "<group>"; };
+		BB0000000000000000000073 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileDraftTests.swift"; sourceTree = "<group>"; };
+		BB0000000000000000000075 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInWithAppleNonceTests.swift"; sourceTree = "<group>"; };
+		BB0000000000000000000078 = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info.plist"; sourceTree = "<group>"; };
+		BB000000000000000000007B = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BridgeBuddies.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB000000000000000000007C = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BridgeBuddiesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BB000000000000000000007B = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = ( ); runOnlyForDeploymentPostprocessing = 0; };
-		BB000000000000000000007C = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = ( ); runOnlyForDeploymentPostprocessing = 0; };
+		BB0000000000000000000081 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = ( ); runOnlyForDeploymentPostprocessing = 0; };
+		BB0000000000000000000082 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = ( ); runOnlyForDeploymentPostprocessing = 0; };
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -152,111 +158,114 @@
 				BB0000000000000000000029 /* Spacing.swift */,
 				BB000000000000000000002B /* Typography.swift */,
 			); path = "DesignSystem"; name = "DesignSystem"; sourceTree = "<group>"; };
-		BB0000000000000000000032 = {isa = PBXGroup; children = (
+		BB0000000000000000000034 = {isa = PBXGroup; children = (
 				BB000000000000000000002E /* AuthenticatedUser.swift */,
-				BB0000000000000000000030 /* School.swift */,
+				BB0000000000000000000030 /* ProfileDraft.swift */,
+				BB0000000000000000000032 /* School.swift */,
 			); path = "Models"; name = "Models"; sourceTree = "<group>"; };
-		BB0000000000000000000035 = {isa = PBXGroup; children = (
-				BB0000000000000000000033 /* RootView.swift */,
+		BB0000000000000000000037 = {isa = PBXGroup; children = (
+				BB0000000000000000000035 /* RootView.swift */,
 			); path = "Screens"; name = "Screens"; sourceTree = "<group>"; };
-		BB000000000000000000003A = {isa = PBXGroup; children = (
-				BB0000000000000000000036 /* ChatListView.swift */,
-				BB0000000000000000000038 /* ChatThreadView.swift */,
+		BB000000000000000000003C = {isa = PBXGroup; children = (
+				BB0000000000000000000038 /* ChatListView.swift */,
+				BB000000000000000000003A /* ChatThreadView.swift */,
 			); path = "Screens/Chat"; name = "Chat"; sourceTree = "<group>"; };
-		BB000000000000000000003D = {isa = PBXGroup; children = (
-				BB000000000000000000003B /* HomeView.swift */,
+		BB000000000000000000003F = {isa = PBXGroup; children = (
+				BB000000000000000000003D /* HomeView.swift */,
 			); path = "Screens/Home"; name = "Home"; sourceTree = "<group>"; };
-		BB0000000000000000000040 = {isa = PBXGroup; children = (
-				BB000000000000000000003E /* IdentityBubblesView.swift */,
+		BB0000000000000000000042 = {isa = PBXGroup; children = (
+				BB0000000000000000000040 /* IdentityBubblesView.swift */,
 			); path = "Screens/Identity"; name = "Identity"; sourceTree = "<group>"; };
-		BB000000000000000000004B = {isa = PBXGroup; children = (
-				BB0000000000000000000041 /* LoginView.swift */,
-				BB0000000000000000000043 /* LoginViewModel.swift */,
-				BB0000000000000000000045 /* ProfileSetupView.swift */,
-				BB0000000000000000000047 /* SchoolSelectView.swift */,
-				BB0000000000000000000049 /* SplashView.swift */,
+		BB000000000000000000004F = {isa = PBXGroup; children = (
+				BB0000000000000000000043 /* LoginView.swift */,
+				BB0000000000000000000045 /* LoginViewModel.swift */,
+				BB0000000000000000000047 /* ProfileSetupView.swift */,
+				BB0000000000000000000049 /* ProfileSetupViewModel.swift */,
+				BB000000000000000000004B /* SchoolSelectView.swift */,
+				BB000000000000000000004D /* SplashView.swift */,
 			); path = "Screens/Onboarding"; name = "Onboarding"; sourceTree = "<group>"; };
-		BB000000000000000000004E = {isa = PBXGroup; children = (
-				BB000000000000000000004C /* ProfileView.swift */,
+		BB0000000000000000000052 = {isa = PBXGroup; children = (
+				BB0000000000000000000050 /* ProfileView.swift */,
 			); path = "Screens/Profile"; name = "Profile"; sourceTree = "<group>"; };
-		BB0000000000000000000051 = {isa = PBXGroup; children = (
-				BB000000000000000000004F /* CampusResourcesView.swift */,
+		BB0000000000000000000055 = {isa = PBXGroup; children = (
+				BB0000000000000000000053 /* CampusResourcesView.swift */,
 			); path = "Screens/Resources"; name = "Resources"; sourceTree = "<group>"; };
-		BB0000000000000000000066 = {isa = PBXGroup; children = (
-				BB0000000000000000000052 /* AuthBackend.swift */,
-				BB0000000000000000000054 /* AuthError.swift */,
-				BB0000000000000000000056 /* AuthService.swift */,
-				BB0000000000000000000058 /* AuthServiceFactory.swift */,
-				BB000000000000000000005A /* AuthSession.swift */,
-				BB000000000000000000005C /* EmailDomainValidator.swift */,
-				BB000000000000000000005E /* FirebaseAuthBackend.swift */,
-				BB0000000000000000000060 /* InMemoryAuthBackend.swift */,
-				BB0000000000000000000062 /* PasswordPolicy.swift */,
-				BB0000000000000000000064 /* SignInWithAppleNonce.swift */,
+		BB000000000000000000006A = {isa = PBXGroup; children = (
+				BB0000000000000000000056 /* AuthBackend.swift */,
+				BB0000000000000000000058 /* AuthError.swift */,
+				BB000000000000000000005A /* AuthService.swift */,
+				BB000000000000000000005C /* AuthServiceFactory.swift */,
+				BB000000000000000000005E /* AuthSession.swift */,
+				BB0000000000000000000060 /* EmailDomainValidator.swift */,
+				BB0000000000000000000062 /* FirebaseAuthBackend.swift */,
+				BB0000000000000000000064 /* InMemoryAuthBackend.swift */,
+				BB0000000000000000000066 /* PasswordPolicy.swift */,
+				BB0000000000000000000068 /* SignInWithAppleNonce.swift */,
 			); path = "Services"; name = "Services"; sourceTree = "<group>"; };
-		BB0000000000000000000071 = {isa = PBXGroup; children = (
-				BB0000000000000000000067 /* AuthServiceTests.swift */,
-				BB0000000000000000000069 /* AuthSessionTests.swift */,
-				BB000000000000000000006B /* EmailDomainValidatorTests.swift */,
-				BB000000000000000000006D /* PasswordPolicyTests.swift */,
-				BB000000000000000000006F /* SignInWithAppleNonceTests.swift */,
+		BB0000000000000000000077 = {isa = PBXGroup; children = (
+				BB000000000000000000006B /* AuthServiceTests.swift */,
+				BB000000000000000000006D /* AuthSessionTests.swift */,
+				BB000000000000000000006F /* EmailDomainValidatorTests.swift */,
+				BB0000000000000000000071 /* PasswordPolicyTests.swift */,
+				BB0000000000000000000073 /* ProfileDraftTests.swift */,
+				BB0000000000000000000075 /* SignInWithAppleNonceTests.swift */,
 			); name = "CoreTests"; sourceTree = "<group>"; };
-		BB0000000000000000000073 = {isa = PBXGroup; children = (
+		BB0000000000000000000079 = {isa = PBXGroup; children = (
 				BB0000000000000000000003 /* App */,
 				BB0000000000000000000026 /* Components */,
 				BB000000000000000000002D /* DesignSystem */,
-				BB0000000000000000000032 /* Models */,
-				BB0000000000000000000035 /* Screens */,
-				BB000000000000000000003A /* Chat */,
-				BB000000000000000000003D /* Home */,
-				BB0000000000000000000040 /* Identity */,
-				BB000000000000000000004B /* Onboarding */,
-				BB000000000000000000004E /* Profile */,
-				BB0000000000000000000051 /* Resources */,
-				BB0000000000000000000066 /* Services */,
-				BB0000000000000000000072 /* Info.plist */,
+				BB0000000000000000000034 /* Models */,
+				BB0000000000000000000037 /* Screens */,
+				BB000000000000000000003C /* Chat */,
+				BB000000000000000000003F /* Home */,
+				BB0000000000000000000042 /* Identity */,
+				BB000000000000000000004F /* Onboarding */,
+				BB0000000000000000000052 /* Profile */,
+				BB0000000000000000000055 /* Resources */,
+				BB000000000000000000006A /* Services */,
+				BB0000000000000000000078 /* Info.plist */,
 			); path = "BridgeBuddies/BridgeBuddies"; name = "BridgeBuddies"; sourceTree = "<group>"; };
-		BB0000000000000000000074 = {isa = PBXGroup; children = (
-				BB0000000000000000000071 /* CoreTests */,
+		BB000000000000000000007A = {isa = PBXGroup; children = (
+				BB0000000000000000000077 /* CoreTests */,
 			); path = "BridgeBuddies/Tests/CoreTests"; name = "Tests"; sourceTree = "<group>"; };
-		BB0000000000000000000077 = {isa = PBXGroup; children = (
-				BB0000000000000000000075 /* BridgeBuddies.app */,
-				BB0000000000000000000076 /* BridgeBuddiesTests.xctest */,
+		BB000000000000000000007D = {isa = PBXGroup; children = (
+				BB000000000000000000007B /* BridgeBuddies.app */,
+				BB000000000000000000007C /* BridgeBuddiesTests.xctest */,
 			); name = Products; sourceTree = "<group>"; };
-		BB0000000000000000000078 = {isa = PBXGroup; children = (
-				BB0000000000000000000073 /* BridgeBuddies */,
-				BB0000000000000000000074 /* Tests */,
-				BB0000000000000000000077 /* Products */,
+		BB000000000000000000007E = {isa = PBXGroup; children = (
+				BB0000000000000000000079 /* BridgeBuddies */,
+				BB000000000000000000007A /* Tests */,
+				BB000000000000000000007D /* Products */,
 			); sourceTree = "<group>"; };
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BB0000000000000000000087 = {isa = PBXNativeTarget; buildConfigurationList = BB0000000000000000000085; buildPhases = (
-				BB0000000000000000000079,
-				BB000000000000000000007B,
-				BB000000000000000000007D,
-			); buildRules = ( ); dependencies = ( ); name = BridgeBuddies; productName = BridgeBuddies; productReference = BB0000000000000000000075; productType = "com.apple.product-type.application"; };
-		BB000000000000000000008A = {isa = PBXNativeTarget; buildConfigurationList = BB0000000000000000000086; buildPhases = (
-				BB000000000000000000007A,
-				BB000000000000000000007C,
+		BB000000000000000000008D = {isa = PBXNativeTarget; buildConfigurationList = BB000000000000000000008B; buildPhases = (
+				BB000000000000000000007F,
+				BB0000000000000000000081,
+				BB0000000000000000000083,
+			); buildRules = ( ); dependencies = ( ); name = BridgeBuddies; productName = BridgeBuddies; productReference = BB000000000000000000007B; productType = "com.apple.product-type.application"; };
+		BB0000000000000000000090 = {isa = PBXNativeTarget; buildConfigurationList = BB000000000000000000008C; buildPhases = (
+				BB0000000000000000000080,
+				BB0000000000000000000082,
 			); buildRules = ( ); dependencies = (
-				BB0000000000000000000089,
-			); name = BridgeBuddiesTests; productName = BridgeBuddiesTests; productReference = BB0000000000000000000076; productType = "com.apple.product-type.bundle.unit-test"; };
+				BB000000000000000000008F,
+			); name = BridgeBuddiesTests; productName = BridgeBuddiesTests; productReference = BB000000000000000000007C; productType = "com.apple.product-type.bundle.unit-test"; };
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		BB000000000000000000008B = {isa = PBXProject; attributes = { BuildIndependentTargetsInParallel = 1; LastSwiftUpdateCheck = 2600; LastUpgradeCheck = 2600; TargetAttributes = { BB0000000000000000000087 = { CreatedOnToolsVersion = 26.0; }; BB000000000000000000008A = { CreatedOnToolsVersion = 26.0; TestTargetID = BB0000000000000000000087; }; }; }; buildConfigurationList = BB0000000000000000000084; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, Base); mainGroup = BB0000000000000000000078; productRefGroup = BB0000000000000000000077; projectDirPath = ""; projectRoot = ""; targets = (
-				BB0000000000000000000087,
-				BB000000000000000000008A,
+		BB0000000000000000000091 = {isa = PBXProject; attributes = { BuildIndependentTargetsInParallel = 1; LastSwiftUpdateCheck = 2600; LastUpgradeCheck = 2600; TargetAttributes = { BB000000000000000000008D = { CreatedOnToolsVersion = 26.0; }; BB0000000000000000000090 = { CreatedOnToolsVersion = 26.0; TestTargetID = BB000000000000000000008D; }; }; }; buildConfigurationList = BB000000000000000000008A; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, Base); mainGroup = BB000000000000000000007E; productRefGroup = BB000000000000000000007D; projectDirPath = ""; projectRoot = ""; targets = (
+				BB000000000000000000008D,
+				BB0000000000000000000090,
 			); };
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BB000000000000000000007D = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = ( ); runOnlyForDeploymentPostprocessing = 0; };
+		BB0000000000000000000083 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = ( ); runOnlyForDeploymentPostprocessing = 0; };
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BB0000000000000000000079 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
+		BB000000000000000000007F = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
 				BB0000000000000000000002 /* BridgeBuddiesApp.swift */,
 				BB0000000000000000000005 /* BottomTabBar.swift */,
 				BB0000000000000000000007 /* BrandChrome.swift */,
@@ -279,45 +288,48 @@
 				BB000000000000000000002A /* Spacing.swift */,
 				BB000000000000000000002C /* Typography.swift */,
 				BB000000000000000000002F /* AuthenticatedUser.swift */,
-				BB0000000000000000000031 /* School.swift */,
-				BB0000000000000000000034 /* RootView.swift */,
-				BB0000000000000000000037 /* ChatListView.swift */,
-				BB0000000000000000000039 /* ChatThreadView.swift */,
-				BB000000000000000000003C /* HomeView.swift */,
-				BB000000000000000000003F /* IdentityBubblesView.swift */,
-				BB0000000000000000000042 /* LoginView.swift */,
-				BB0000000000000000000044 /* LoginViewModel.swift */,
-				BB0000000000000000000046 /* ProfileSetupView.swift */,
-				BB0000000000000000000048 /* SchoolSelectView.swift */,
-				BB000000000000000000004A /* SplashView.swift */,
-				BB000000000000000000004D /* ProfileView.swift */,
-				BB0000000000000000000050 /* CampusResourcesView.swift */,
-				BB0000000000000000000053 /* AuthBackend.swift */,
-				BB0000000000000000000055 /* AuthError.swift */,
-				BB0000000000000000000057 /* AuthService.swift */,
-				BB0000000000000000000059 /* AuthServiceFactory.swift */,
-				BB000000000000000000005B /* AuthSession.swift */,
-				BB000000000000000000005D /* EmailDomainValidator.swift */,
-				BB000000000000000000005F /* FirebaseAuthBackend.swift */,
-				BB0000000000000000000061 /* InMemoryAuthBackend.swift */,
-				BB0000000000000000000063 /* PasswordPolicy.swift */,
-				BB0000000000000000000065 /* SignInWithAppleNonce.swift */,
+				BB0000000000000000000031 /* ProfileDraft.swift */,
+				BB0000000000000000000033 /* School.swift */,
+				BB0000000000000000000036 /* RootView.swift */,
+				BB0000000000000000000039 /* ChatListView.swift */,
+				BB000000000000000000003B /* ChatThreadView.swift */,
+				BB000000000000000000003E /* HomeView.swift */,
+				BB0000000000000000000041 /* IdentityBubblesView.swift */,
+				BB0000000000000000000044 /* LoginView.swift */,
+				BB0000000000000000000046 /* LoginViewModel.swift */,
+				BB0000000000000000000048 /* ProfileSetupView.swift */,
+				BB000000000000000000004A /* ProfileSetupViewModel.swift */,
+				BB000000000000000000004C /* SchoolSelectView.swift */,
+				BB000000000000000000004E /* SplashView.swift */,
+				BB0000000000000000000051 /* ProfileView.swift */,
+				BB0000000000000000000054 /* CampusResourcesView.swift */,
+				BB0000000000000000000057 /* AuthBackend.swift */,
+				BB0000000000000000000059 /* AuthError.swift */,
+				BB000000000000000000005B /* AuthService.swift */,
+				BB000000000000000000005D /* AuthServiceFactory.swift */,
+				BB000000000000000000005F /* AuthSession.swift */,
+				BB0000000000000000000061 /* EmailDomainValidator.swift */,
+				BB0000000000000000000063 /* FirebaseAuthBackend.swift */,
+				BB0000000000000000000065 /* InMemoryAuthBackend.swift */,
+				BB0000000000000000000067 /* PasswordPolicy.swift */,
+				BB0000000000000000000069 /* SignInWithAppleNonce.swift */,
 			); runOnlyForDeploymentPostprocessing = 0; };
-		BB000000000000000000007A = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
-				BB0000000000000000000068 /* AuthServiceTests.swift */,
-				BB000000000000000000006A /* AuthSessionTests.swift */,
-				BB000000000000000000006C /* EmailDomainValidatorTests.swift */,
-				BB000000000000000000006E /* PasswordPolicyTests.swift */,
-				BB0000000000000000000070 /* SignInWithAppleNonceTests.swift */,
+		BB0000000000000000000080 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
+				BB000000000000000000006C /* AuthServiceTests.swift */,
+				BB000000000000000000006E /* AuthSessionTests.swift */,
+				BB0000000000000000000070 /* EmailDomainValidatorTests.swift */,
+				BB0000000000000000000072 /* PasswordPolicyTests.swift */,
+				BB0000000000000000000074 /* ProfileDraftTests.swift */,
+				BB0000000000000000000076 /* SignInWithAppleNonceTests.swift */,
 			); runOnlyForDeploymentPostprocessing = 0; };
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BB0000000000000000000089 = {isa = PBXTargetDependency; target = BB0000000000000000000087; targetProxy = BB0000000000000000000088; };
+		BB000000000000000000008F = {isa = PBXTargetDependency; target = BB000000000000000000008D; targetProxy = BB000000000000000000008E; };
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		BB000000000000000000007E = {isa = XCBuildConfiguration; buildSettings = {
+		BB0000000000000000000084 = {isa = XCBuildConfiguration; buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -333,7 +345,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			}; name = Debug; };
-		BB000000000000000000007F = {isa = XCBuildConfiguration; buildSettings = {
+		BB0000000000000000000085 = {isa = XCBuildConfiguration; buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -346,7 +358,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 			}; name = Release; };
-		BB0000000000000000000080 = {isa = XCBuildConfiguration; buildSettings = {
+		BB0000000000000000000086 = {isa = XCBuildConfiguration; buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -359,7 +371,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = 1;
 			}; name = Debug; };
-		BB0000000000000000000081 = {isa = XCBuildConfiguration; buildSettings = {
+		BB0000000000000000000087 = {isa = XCBuildConfiguration; buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -372,7 +384,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = 1;
 			}; name = Release; };
-		BB0000000000000000000082 = {isa = XCBuildConfiguration; buildSettings = {
+		BB0000000000000000000088 = {isa = XCBuildConfiguration; buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -381,7 +393,7 @@
 				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BridgeBuddies.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BridgeBuddies";
 			}; name = Debug; };
-		BB0000000000000000000083 = {isa = XCBuildConfiguration; buildSettings = {
+		BB0000000000000000000089 = {isa = XCBuildConfiguration; buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -393,19 +405,19 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BB0000000000000000000084 = {isa = XCConfigurationList; buildConfigurations = (
-				BB000000000000000000007E /* Debug */,
-				BB000000000000000000007F /* Release */,
+		BB000000000000000000008A = {isa = XCConfigurationList; buildConfigurations = (
+				BB0000000000000000000084 /* Debug */,
+				BB0000000000000000000085 /* Release */,
 			); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
-		BB0000000000000000000085 = {isa = XCConfigurationList; buildConfigurations = (
-				BB0000000000000000000080 /* Debug */,
-				BB0000000000000000000081 /* Release */,
+		BB000000000000000000008B = {isa = XCConfigurationList; buildConfigurations = (
+				BB0000000000000000000086 /* Debug */,
+				BB0000000000000000000087 /* Release */,
 			); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
-		BB0000000000000000000086 = {isa = XCConfigurationList; buildConfigurations = (
-				BB0000000000000000000082 /* Debug */,
-				BB0000000000000000000083 /* Release */,
+		BB000000000000000000008C = {isa = XCConfigurationList; buildConfigurations = (
+				BB0000000000000000000088 /* Debug */,
+				BB0000000000000000000089 /* Release */,
 			); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
 /* End XCConfigurationList section */
 	};
-	rootObject = BB000000000000000000008B;
+	rootObject = BB0000000000000000000091;
 }

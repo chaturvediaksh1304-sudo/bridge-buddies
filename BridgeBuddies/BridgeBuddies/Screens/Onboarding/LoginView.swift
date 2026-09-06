@@ -9,15 +9,16 @@ import SwiftUI
 /// flexible, so the layout keeps its proportions rather than its pixel offsets
 /// as the device changes.
 struct LoginView: View {
+    let session: AuthSession
+
     @State private var model: LoginViewModel
+    @State private var showSignUp = false
 
     @Environment(\.dismiss) private var dismiss
 
-    var onSignUp: () -> Void = {}
-
-    init(session: AuthSession, onSignUp: @escaping () -> Void = {}) {
+    init(session: AuthSession) {
+        self.session = session
         _model = State(initialValue: LoginViewModel(session: session))
-        self.onSignUp = onSignUp
     }
 
     var body: some View {
@@ -43,6 +44,9 @@ struct LoginView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
+        .navigationDestination(isPresented: $showSignUp) {
+            ProfileSetupView(session: session)
+        }
     }
 
     // MARK: - Bands
@@ -121,7 +125,7 @@ struct LoginView: View {
                     .font(.bodyMD)
                     .foregroundColor(.textSecondary)
 
-                Button(action: onSignUp) {
+                Button { showSignUp = true } label: {
                     Text("Sign up")
                         .font(.bodyMD)
                         .fontWeight(.bold)

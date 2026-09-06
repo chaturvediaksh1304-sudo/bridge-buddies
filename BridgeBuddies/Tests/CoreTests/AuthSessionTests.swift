@@ -64,6 +64,31 @@ struct AuthSessionTests {
         #expect(await backend.recorded().isEmpty)
     }
 
+    @Test("signing up leaves the session signed out until the address is confirmed")
+    func signUpDoesNotSignIn() async throws {
+        // The account starts unverified, so signing the user straight in would
+        // walk past the gate `signIn` enforces.
+        let (session, backend) = makeSession()
+        await session.start()
+        try await session.signUp(email: "zaina1z@cmich.edu", password: "Passw0rd!")
+
+        #expect(session.state == .signedOut)
+        #expect(await backend.recorded() == [
+            .signUp(email: "zaina1z@cmich.edu"),
+            .sendEmailVerification
+        ])
+    }
+
+    @Test("a rejected sign-up leaves the session signed out")
+    func failedSignUpKeepsSignedOut() async {
+        let (session, _) = makeSession()
+        await session.start()
+        await #expect(throws: AuthError.disallowedDomain) {
+            try await session.signUp(email: "someone@gmail.com", password: "Passw0rd!")
+        }
+        #expect(session.state == .signedOut)
+    }
+
     @Test("signing out returns to signed out and tells the backend")
     func signOutClears() async throws {
         let (session, backend) = makeSession(restoring: .stub())
