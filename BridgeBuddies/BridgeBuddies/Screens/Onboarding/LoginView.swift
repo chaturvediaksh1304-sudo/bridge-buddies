@@ -3,9 +3,9 @@ import SwiftUI
 /// Login — wireframe 2.1.
 ///
 /// The screen is three bands with air between them, not one evenly-spaced
-/// column: a dark title block that the back button sits on top of, the credential
-/// pair floating in the middle, and the commit zone (CTA + sign-up) low on the
-/// screen with the wordmark anchored below it. The gaps between those bands are
+/// column: the title and back control at the top, the credential pair floating
+/// in the middle, and the commit zone (CTA + sign-up) low on the screen with
+/// the wordmark anchored below it. The gaps between those bands are
 /// flexible, so the layout keeps its proportions rather than its pixel offsets
 /// as the device changes.
 struct LoginView: View {
@@ -15,8 +15,8 @@ struct LoginView: View {
 
     var onSignUp: () -> Void = {}
 
-    init(auth: AuthService = .development(), onSignUp: @escaping () -> Void = {}) {
-        _model = State(initialValue: LoginViewModel(auth: auth))
+    init(session: AuthSession, onSignUp: @escaping () -> Void = {}) {
+        _model = State(initialValue: LoginViewModel(session: session))
         self.onSignUp = onSignUp
     }
 
@@ -134,5 +134,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    NavigationStack { LoginView() }
+    NavigationStack { LoginView(session: AuthSession(auth: .development())) }
 }

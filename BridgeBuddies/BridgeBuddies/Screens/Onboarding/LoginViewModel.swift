@@ -15,12 +15,11 @@ final class LoginViewModel {
 
     private(set) var isSubmitting = false
     private(set) var errorMessage: String?
-    private(set) var signedInUser: AuthenticatedUser?
 
-    private let auth: AuthService
+    private let session: AuthSession
 
-    init(auth: AuthService = .development()) {
-        self.auth = auth
+    init(session: AuthSession) {
+        self.session = session
     }
 
     var canSubmit: Bool {
@@ -31,7 +30,9 @@ final class LoginViewModel {
 
     func logIn() async {
         guard canSubmit else { return }
-        await run { self.signedInUser = try await self.auth.signIn(email: self.email, password: self.password) }
+        // On success the session flips to .signedIn and the root swaps the
+        // screen out from under us — this view model doesn't navigate.
+        await run { try await self.session.signIn(email: self.email, password: self.password) }
     }
 
     func sendPasswordReset() async {
@@ -39,7 +40,7 @@ final class LoginViewModel {
             errorMessage = "Enter your email address first."
             return
         }
-        await run { try await self.auth.sendPasswordReset(email: self.email) }
+        await run { try await self.session.sendPasswordReset(email: self.email) }
     }
 
     private func run(_ operation: @escaping () async throws -> Void) async {

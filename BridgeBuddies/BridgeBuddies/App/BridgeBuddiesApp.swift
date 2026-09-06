@@ -15,11 +15,13 @@ struct BridgeBuddiesApp: App {
         #endif
     }
 
+    /// Swap `.development()` for `.firebase(for:)` once the SDK and
+     /// GoogleService-Info.plist are in the target — nothing else changes.
+    @State private var session = AuthSession(auth: .development())
+
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
-                SplashView()
-            }
+            RootView(session: session)
         }
     }
 }

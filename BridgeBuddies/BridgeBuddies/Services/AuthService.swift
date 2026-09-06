@@ -50,6 +50,16 @@ struct AuthService: Sendable {
         try await backend.signOut()
     }
 
+    /// A restored session is only honoured if the address is verified — the same
+    /// gate `signIn` applies. A failure to restore is not an error worth
+    /// surfacing at launch; it just means signed out.
+    func restoreSession() async -> AuthenticatedUser? {
+        guard let user = try? await backend.restoreSession(), user.isEmailVerified else {
+            return nil
+        }
+        return user
+    }
+
     private func allowedAddress(_ email: String) throws -> String {
         let email = EmailDomainValidator.normalized(email)
         guard EmailDomainValidator.domain(of: email) != nil else { throw AuthError.invalidEmail }

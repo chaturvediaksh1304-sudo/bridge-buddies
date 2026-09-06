@@ -61,4 +61,7 @@ actor InMemoryAuthBackend: AuthBackend {
     }
 
     func signOut() async throws { signedInEmail = nil }
+
+    /// Nothing survives a relaunch, so there is never a session to restore.
+    func restoreSession() async throws -> AuthenticatedUser? { nil }
 }

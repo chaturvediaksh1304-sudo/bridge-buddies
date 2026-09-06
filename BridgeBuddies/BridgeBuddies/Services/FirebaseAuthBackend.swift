@@ -61,6 +61,14 @@ actor FirebaseAuthBackend: AuthBackend {
         do { try auth.signOut() } catch { throw Self.mapped(error) }
     }
 
+    func restoreSession() async throws -> AuthenticatedUser? {
+        guard let user = auth.currentUser else { return nil }
+        // The verified flag goes stale between launches if the link was clicked
+        // on another device.
+        try? await user.reload()
+        return Self.user(from: user)
+    }
+
     private static func user(from user: User) -> AuthenticatedUser {
         AuthenticatedUser(
             id: user.uid,

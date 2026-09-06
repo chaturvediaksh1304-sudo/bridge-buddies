@@ -15,9 +15,11 @@ actor FakeAuthBackend: AuthBackend {
 
     private(set) var calls: [Call] = []
     private var result: Result<AuthenticatedUser, Error>
+    private let restored: AuthenticatedUser?
 
-    init(returning user: AuthenticatedUser = .stub()) {
+    init(returning user: AuthenticatedUser = .stub(), restoring: AuthenticatedUser? = nil) {
         self.result = .success(user)
+        self.restored = restoring
     }
 
     func setFailure(_ error: Error) { result = .failure(error) }
@@ -41,6 +43,7 @@ actor FakeAuthBackend: AuthBackend {
     func sendEmailVerification() async throws { calls.append(.sendEmailVerification) }
     func sendPasswordReset(email: String) async throws { calls.append(.sendPasswordReset(email: email)) }
     func signOut() async throws { calls.append(.signOut) }
+    func restoreSession() async throws -> AuthenticatedUser? { restored }
 }
 
 extension AuthenticatedUser {

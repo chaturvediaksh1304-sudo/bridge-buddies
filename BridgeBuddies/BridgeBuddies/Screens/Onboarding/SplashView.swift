@@ -6,6 +6,8 @@ import SwiftUI
 /// sits, settling into sage behind the action. Nothing else competes with the
 /// mark, which is the only thing on screen worth looking at.
 struct SplashView: View {
+    let session: AuthSession
+
     @State private var showLogin = false
 
     var body: some View {
@@ -32,10 +34,10 @@ struct SplashView: View {
                     .padding(.bottom, Spacing.section + Spacing.stack)
             }
         }
-        .navigationDestination(isPresented: $showLogin) { LoginView() }
+        .navigationDestination(isPresented: $showLogin) { LoginView(session: session) }
     }
 }
 
 #Preview {
-    NavigationStack { SplashView() }
+    NavigationStack { SplashView(session: AuthSession(auth: .development())) }
 }

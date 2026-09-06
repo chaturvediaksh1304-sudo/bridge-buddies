@@ -14,4 +14,8 @@ protocol AuthBackend: Sendable {
     func sendEmailVerification() async throws
     func sendPasswordReset(email: String) async throws
     func signOut() async throws
+
+    /// The session persisted from a previous launch, if the backend keeps one.
+    /// Firebase does; the in-memory stand-in never does.
+    func restoreSession() async throws -> AuthenticatedUser?
 }
